@@ -1,0 +1,10 @@
+C:\Users\nikit\source\repos\text\text\bin\Debug\text.exe.config
+C:\Users\nikit\source\repos\text\text\bin\Debug\text.exe
+C:\Users\nikit\source\repos\text\text\bin\Debug\text.pdb
+C:\Users\nikit\source\repos\text\text\obj\Debug\text.csprojAssemblyReference.cache
+C:\Users\nikit\source\repos\text\text\obj\Debug\text.Form1.resources
+C:\Users\nikit\source\repos\text\text\obj\Debug\text.Properties.Resources.resources
+C:\Users\nikit\source\repos\text\text\obj\Debug\text.csproj.GenerateResource.cache
+C:\Users\nikit\source\repos\text\text\obj\Debug\text.csproj.CoreCompileInputs.cache
+C:\Users\nikit\source\repos\text\text\obj\Debug\text.exe
+C:\Users\nikit\source\repos\text\text\obj\Debug\text.pdb
