@@ -29,37 +29,42 @@
         private void InitializeComponent()
         {
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.StrikeBtn = new System.Windows.Forms.Button();
+            this.UnderBtn = new System.Windows.Forms.Button();
+            this.ItalicBtn = new System.Windows.Forms.Button();
+            this.BoldBtn = new System.Windows.Forms.Button();
+            this.BackColorBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.RedoBtn = new System.Windows.Forms.Button();
+            this.UndoBtn = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.ColorBtn = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.colorDialog2 = new System.Windows.Forms.ColorDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.richTextBox1 = new ADV.AdvRichTextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.richTextBox1.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBox1.Location = new System.Drawing.Point(0, 124);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1077, 618);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
             // 
             // menuStrip1
             // 
@@ -68,46 +73,50 @@
             this.viewToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1077, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1200, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
             this.openToolStripMenuItem,
             this.saveToolStripMenuItem,
             this.saveAsToolStripMenuItem,
+            this.closeToolStripMenuItem,
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // newToolStripMenuItem
-            // 
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.newToolStripMenuItem.Text = "New";
-            // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.saveAsToolStripMenuItem.Text = "Save As";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            // 
+            // closeToolStripMenuItem
+            // 
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -119,6 +128,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
@@ -133,20 +143,202 @@
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
             this.refreshToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.StrikeBtn);
+            this.panel1.Controls.Add(this.UnderBtn);
+            this.panel1.Controls.Add(this.ItalicBtn);
+            this.panel1.Controls.Add(this.BoldBtn);
+            this.panel1.Controls.Add(this.BackColorBtn);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.RedoBtn);
+            this.panel1.Controls.Add(this.UndoBtn);
+            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.ColorBtn);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1077, 100);
+            this.panel1.Size = new System.Drawing.Size(1200, 100);
             this.panel1.TabIndex = 2;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.Image = global::text.Properties.Resources.icons8_Align_Justify_20px;
+            this.button4.Location = new System.Drawing.Point(371, 30);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(23, 23);
+            this.button4.TabIndex = 14;
+            this.button4.Tag = "justify";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.ChangeAlignment_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.Image = global::text.Properties.Resources.icons8_Align_Right_20px;
+            this.button3.Location = new System.Drawing.Point(342, 30);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(23, 23);
+            this.button3.TabIndex = 13;
+            this.button3.Tag = "right";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.ChangeAlignment_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Image = global::text.Properties.Resources.icons8_Align_Center_20px;
+            this.button2.Location = new System.Drawing.Point(313, 30);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(23, 23);
+            this.button2.TabIndex = 12;
+            this.button2.Tag = "center";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.ChangeAlignment_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Image = global::text.Properties.Resources.icons8_Align_Left_20px;
+            this.button1.Location = new System.Drawing.Point(284, 30);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(23, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Tag = "left";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.ChangeAlignment_Click);
+            // 
+            // StrikeBtn
+            // 
+            this.StrikeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.StrikeBtn.FlatAppearance.BorderSize = 0;
+            this.StrikeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StrikeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.StrikeBtn.Location = new System.Drawing.Point(197, 30);
+            this.StrikeBtn.Name = "StrikeBtn";
+            this.StrikeBtn.Size = new System.Drawing.Size(23, 23);
+            this.StrikeBtn.TabIndex = 10;
+            this.StrikeBtn.Tag = "";
+            this.StrikeBtn.Text = "ab";
+            this.StrikeBtn.UseVisualStyleBackColor = false;
+            this.StrikeBtn.Click += new System.EventHandler(this.ChangeFontStyle_Click);
+            // 
+            // UnderBtn
+            // 
+            this.UnderBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.UnderBtn.FlatAppearance.BorderSize = 0;
+            this.UnderBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UnderBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.UnderBtn.Location = new System.Drawing.Point(168, 30);
+            this.UnderBtn.Name = "UnderBtn";
+            this.UnderBtn.Size = new System.Drawing.Size(23, 23);
+            this.UnderBtn.TabIndex = 9;
+            this.UnderBtn.Tag = "";
+            this.UnderBtn.Text = "U";
+            this.UnderBtn.UseVisualStyleBackColor = false;
+            this.UnderBtn.Click += new System.EventHandler(this.ChangeFontStyle_Click);
+            // 
+            // ItalicBtn
+            // 
+            this.ItalicBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ItalicBtn.FlatAppearance.BorderSize = 0;
+            this.ItalicBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ItalicBtn.Font = new System.Drawing.Font("Times New Roman", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ItalicBtn.Location = new System.Drawing.Point(139, 30);
+            this.ItalicBtn.Name = "ItalicBtn";
+            this.ItalicBtn.Size = new System.Drawing.Size(23, 23);
+            this.ItalicBtn.TabIndex = 8;
+            this.ItalicBtn.Tag = "";
+            this.ItalicBtn.Text = "I";
+            this.ItalicBtn.UseVisualStyleBackColor = false;
+            this.ItalicBtn.Click += new System.EventHandler(this.ChangeFontStyle_Click);
+            // 
+            // BoldBtn
+            // 
+            this.BoldBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.BoldBtn.FlatAppearance.BorderSize = 0;
+            this.BoldBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BoldBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BoldBtn.Location = new System.Drawing.Point(110, 30);
+            this.BoldBtn.Name = "BoldBtn";
+            this.BoldBtn.Size = new System.Drawing.Size(23, 23);
+            this.BoldBtn.TabIndex = 7;
+            this.BoldBtn.Tag = "";
+            this.BoldBtn.Text = "B";
+            this.BoldBtn.UseVisualStyleBackColor = false;
+            this.BoldBtn.Click += new System.EventHandler(this.ChangeFontStyle_Click);
+            // 
+            // BackColorBtn
+            // 
+            this.BackColorBtn.BackColor = System.Drawing.Color.White;
+            this.BackColorBtn.FlatAppearance.BorderSize = 0;
+            this.BackColorBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackColorBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BackColorBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColorBtn.Location = new System.Drawing.Point(226, 30);
+            this.BackColorBtn.Name = "BackColorBtn";
+            this.BackColorBtn.Size = new System.Drawing.Size(23, 23);
+            this.BackColorBtn.TabIndex = 6;
+            this.BackColorBtn.Text = "A";
+            this.BackColorBtn.UseVisualStyleBackColor = false;
+            this.BackColorBtn.Click += new System.EventHandler(this.BackColorBtn_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)), true);
+            this.label1.Location = new System.Drawing.Point(608, 76);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "label1";
+            this.label1.Visible = false;
+            // 
+            // RedoBtn
+            // 
+            this.RedoBtn.Font = new System.Drawing.Font("Wingdings 3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.RedoBtn.Location = new System.Drawing.Point(56, 3);
+            this.RedoBtn.Name = "RedoBtn";
+            this.RedoBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.RedoBtn.Size = new System.Drawing.Size(48, 30);
+            this.RedoBtn.TabIndex = 4;
+            this.RedoBtn.Text = "";
+            this.RedoBtn.UseVisualStyleBackColor = true;
+            this.RedoBtn.Click += new System.EventHandler(this.RedoBtn_Click);
+            // 
+            // UndoBtn
+            // 
+            this.UndoBtn.Font = new System.Drawing.Font("Wingdings 3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.UndoBtn.Location = new System.Drawing.Point(3, 3);
+            this.UndoBtn.Name = "UndoBtn";
+            this.UndoBtn.Size = new System.Drawing.Size(48, 30);
+            this.UndoBtn.TabIndex = 3;
+            this.UndoBtn.Text = "";
+            this.UndoBtn.UseVisualStyleBackColor = true;
+            this.UndoBtn.Click += new System.EventHandler(this.UndoBtn_Click);
             // 
             // comboBox2
             // 
@@ -168,57 +360,90 @@
             "36",
             "48",
             "72"});
-            this.comboBox2.Location = new System.Drawing.Point(252, 51);
+            this.comboBox2.Location = new System.Drawing.Point(326, 3);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(56, 21);
+            this.comboBox2.Size = new System.Drawing.Size(68, 21);
             this.comboBox2.TabIndex = 2;
+            this.comboBox2.SelectionChangeCommitted += new System.EventHandler(this.comboBox2_SelectionChangeCommitted);
             this.comboBox2.TextChanged += new System.EventHandler(this.comboBox2_TextChanged);
+            this.comboBox2.Leave += new System.EventHandler(this.comboBox2_Leave);
             // 
-            // button1
+            // ColorBtn
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(346, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(23, 23);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = false;
+            this.ColorBtn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ColorBtn.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.ColorBtn.FlatAppearance.BorderSize = 2;
+            this.ColorBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ColorBtn.Location = new System.Drawing.Point(255, 30);
+            this.ColorBtn.Name = "ColorBtn";
+            this.ColorBtn.Size = new System.Drawing.Size(23, 23);
+            this.ColorBtn.TabIndex = 1;
+            this.ColorBtn.UseVisualStyleBackColor = false;
+            this.ColorBtn.Click += new System.EventHandler(this.ColorBtn_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(97, 24);
+            this.comboBox1.Location = new System.Drawing.Point(110, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(210, 21);
             this.comboBox1.TabIndex = 0;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
-            this.comboBox1.TextUpdate += new System.EventHandler(this.comboBox1_TextUpdate);
+            this.comboBox1.Leave += new System.EventHandler(this.comboBox1_Leave);
             // 
-            // label1
+            // panel2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(571, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
+            this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.richTextBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 124);
+            this.panel2.Margin = new System.Windows.Forms.Padding(10);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1200, 627);
+            this.panel2.TabIndex = 3;
+            // 
+            // colorDialog2
+            // 
+            this.colorDialog2.Color = System.Drawing.Color.White;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.AcceptsTab = true;
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.richTextBox1.HideSelection = false;
+            this.richTextBox1.Location = new System.Drawing.Point(267, 13);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.SelectionAlignment = ADV.TextAlign.Left;
+            this.richTextBox1.Size = new System.Drawing.Size(630, 600);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
+            this.richTextBox1.SelectionChanged += new System.EventHandler(this.richTextBox_SelectionChanged);
+            this.richTextBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.richTextBox1_MouseUp);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1077, 742);
+            this.ClientSize = new System.Drawing.Size(1200, 751);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "TextEditor";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,10 +452,8 @@
         #endregion
 
         private System.Windows.Forms.FontDialog fontDialog1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
@@ -239,11 +462,28 @@
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ColorBtn;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button RedoBtn;
+        private System.Windows.Forms.Button UndoBtn;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BackColorBtn;
+        private System.Windows.Forms.ColorDialog colorDialog2;
+        private System.Windows.Forms.Button UnderBtn;
+        private System.Windows.Forms.Button ItalicBtn;
+        private System.Windows.Forms.Button BoldBtn;
+        private System.Windows.Forms.Button StrikeBtn;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private ADV.AdvRichTextBox richTextBox1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
