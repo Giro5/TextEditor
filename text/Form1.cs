@@ -15,9 +15,10 @@ namespace text
     public partial class Form1 : Form
     {
 
-        string LastUsedFont = "Arial";
-        float LastUsedSize = 14f;
-        string NameTitle = "TextEditor", path = "";
+        string LastUsedFont = "Arial";//временно хранит шрифт
+        float LastUsedSize = 14f;//временно хранит размер
+        string NameTitle = "TextEditor";//имя программы
+        string path = "";//путь к файлу
 
         public Form1()
         {
@@ -27,64 +28,51 @@ namespace text
         private void Form1_Load(object sender, EventArgs e)
         {
             richTextBox1.Parent = panel2;
-            comboBox1.Items.AddRange(FontFamily.Families.Select(x => x.Name).ToArray<object>());
-            comboBox1.Text = richTextBox1.Font.Name;
-            ColorBtn.BackColor = richTextBox1.ForeColor;
-            comboBox2.Text = Convert.ToInt32(richTextBox1.Font.Size).ToString();
+            comboBox1.Items.AddRange(FontFamily.Families.Select(x => x.Name).ToArray<object>());//заполняет комбобокс всеми шрифтами на пк
+            comboBox1.Text = richTextBox1.Font.Name;//выбирает активный шрифт
+            ColorBtn.BackColor = richTextBox1.ForeColor;//выбирает активный цвет
+            comboBox2.Text = Convert.ToInt32(richTextBox1.Font.Size).ToString();//выбирает активный размер
         }
 
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
-        {
+        {//при открытии и выбора пункта в комбобоксе с шрифтами
             int ibegin = richTextBox1.SelectionStart, len = richTextBox1.SelectionLength;
-            label1.Text = $"{ibegin} : {len}";
             LastUsedFont = comboBox1.SelectedItem.ToString();
             for (int i = ibegin; i < ibegin + len; i++)
-            {
+            {//при изменении шрифта выделенного текста, изменяется каждый символ по отдельности
                 richTextBox1.Select(i, 1);
-                richTextBox1.SelectionFont = new Font(LastUsedFont, richTextBox1.SelectionFont.Size, richTextBox1.SelectionFont.Style/*, GraphicsUnit.Point, ((byte)(204))*/);
+                richTextBox1.SelectionFont = new Font(LastUsedFont, richTextBox1.SelectionFont.Size, richTextBox1.SelectionFont.Style);
             }
             if (richTextBox1.SelectedText == "")
-            {
-                richTextBox1.SelectionFont = new Font(LastUsedFont, richTextBox1.SelectionFont.Size, richTextBox1.SelectionFont.Style/*, GraphicsUnit.Point, ((byte)(204))*/);
-            }
+                richTextBox1.SelectionFont = new Font(LastUsedFont, richTextBox1.SelectionFont.Size, richTextBox1.SelectionFont.Style);
             richTextBox1.Select(ibegin, len);
         }
 
-        private void comboBox2_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void comboBox2_Leave(object sender, EventArgs e)
-        {
+        {//при смене фокуса с комбобокса с размерами
             float tmp = LastUsedSize;
-            if (float.TryParse(comboBox2.Text, out LastUsedSize) && LastUsedSize != 0f && LastUsedSize < 1639f)
-            {
+            if (float.TryParse(comboBox2.Text, out LastUsedSize) && LastUsedSize > 0f && LastUsedSize < 1639f)
+            {//если указанное значение число и больше нуля и меньше 1639
                 int ibegin = richTextBox1.SelectionStart, len = richTextBox1.SelectionLength;
                 label1.Text = $"{ibegin} : {len}";
                 for (int i = ibegin; i < ibegin + len; i++)
-                {
+                {//при изменении размера выделенного текста, изменяется каждый символ по отдельности
                     richTextBox1.Select(i, 1);
-                    richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.Name, LastUsedSize, richTextBox1.SelectionFont.Style/*, GraphicsUnit.Point, ((byte)(204))*/);
+                    richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.Name, LastUsedSize, richTextBox1.SelectionFont.Style);
                 }
                 if (richTextBox1.SelectedText == "")
-                    richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.Name, LastUsedSize, richTextBox1.SelectionFont.Style/*, GraphicsUnit.Point, ((byte)(204))*/);
+                    richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.Name, LastUsedSize, richTextBox1.SelectionFont.Style);
                 richTextBox1.Select(ibegin, len);
             }
             else
-            {
+            {//иначе возвращаем все назад
                 LastUsedSize = tmp;
                 comboBox2.Text = tmp.ToString();
             }
         }
 
-        private void richTextBox_SelectionChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void richTextBox1_MouseUp(object sender, MouseEventArgs e)
-        {
+        {//при отпускании кнопки на поверхности текста - определяются шрифт, размер и стили
             try
             {
                 comboBox1.Text = richTextBox1.SelectionFont.Name;
@@ -135,30 +123,26 @@ namespace text
         }
 
         private void UndoBtn_Click(object sender, EventArgs e)
-        {
+        {//удаление действия
             richTextBox1.Undo();
         }
 
         private void RedoBtn_Click(object sender, EventArgs e)
-        {
-            if (!richTextBox1.CanRedo)
-                return;
-            richTextBox1.Redo();
+        {//возвращение действия
+            if (richTextBox1.CanRedo)
+                richTextBox1.Redo();
         }
 
         private void comboBox1_Leave(object sender, EventArgs e)
         {
-            if (!comboBox1.Items.Contains(comboBox1.Text))
-            {
-                label1.Text = LastUsedFont;
+            if (!comboBox1.Items.Contains(comboBox1.Text))//если указанного шрифта нету с списке
                 comboBox1.Text = LastUsedFont;
-            }
         }
 
         private void ColorBtn_Click(object sender, EventArgs e)
         {
             if (colorDialog1.ShowDialog() == DialogResult.OK)
-            {
+            {//изменение цвета текста
                 richTextBox1.SelectionColor = colorDialog1.Color;
                 ColorBtn.BackColor = colorDialog1.Color;
             }
@@ -167,16 +151,16 @@ namespace text
         private void BackColorBtn_Click(object sender, EventArgs e)
         {
             if (colorDialog2.ShowDialog() == DialogResult.OK)
-            {
+            {//изменение цвета фона текста
                 richTextBox1.SelectionBackColor = colorDialog2.Color;
                 BackColorBtn.BackColor = colorDialog2.Color;
             }
         }
 
         private void ChangeFontStyle_Click(object sender, EventArgs e)
-        {
-            Button b = (Button)sender;
-            FontStyle fs = FontStyle.Regular;
+        {//смена стиля выбранного текста
+            Button b = (Button)sender;//определяется какая именно нажата кнопка
+            FontStyle fs = FontStyle.Regular;//конструкция далее, определит стиль шрифта с такими нажатыми кнопками
             if (BoldBtn.FlatStyle == FlatStyle.Popup)
                 fs |= FontStyle.Bold;
             if (ItalicBtn.FlatStyle == FlatStyle.Popup)
@@ -185,16 +169,14 @@ namespace text
                 fs |= FontStyle.Underline;
             if (StrikeBtn.FlatStyle == FlatStyle.Popup)
                 fs |= FontStyle.Strikeout;
-
             int ibegin = richTextBox1.SelectionStart, len = richTextBox1.SelectionLength;
             label1.Text = $"{ibegin} : {len}";
             for (int i = ibegin; i < ibegin + len; i++)
-            {
+            {//при изменении стиля выделенного текста, изменяется каждый символ по отдельности
                 richTextBox1.Select(i, 1);
-
-                FontStyle fss = richTextBox1.SelectionFont.Style | FontStyle.Regular;
+                FontStyle fss = richTextBox1.SelectionFont.Style | FontStyle.Regular;//определяет стиль для очередного символа
                 if (b.FlatStyle == FlatStyle.Flat)
-                {
+                {//прибавление стилей
                     if (b.Text == "B")
                         fss |= FontStyle.Bold;
                     else if (b.Text == "I")
@@ -205,7 +187,7 @@ namespace text
                         fss |= FontStyle.Strikeout;
                 }
                 else if (b.FlatStyle == FlatStyle.Popup)
-                {
+                {//вычитание стилей
                     if (b.Text == "B")
                         fss ^= FontStyle.Bold;
                     else if (b.Text == "I")
@@ -215,10 +197,10 @@ namespace text
                     else if (b.Text == "ab")
                         fss ^= FontStyle.Strikeout;
                 }
-                 richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.Name, richTextBox1.SelectionFont.Size, fss/*, GraphicsUnit.Point, ((byte)(204))*/);
+                 richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.Name, richTextBox1.SelectionFont.Size, fss);
             }
             if (richTextBox1.SelectedText == "")
-                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.Name, richTextBox1.SelectionFont.Size, fs/*, GraphicsUnit.Point, ((byte)(204))*/);
+                richTextBox1.SelectionFont = new Font(richTextBox1.SelectionFont.Name, richTextBox1.SelectionFont.Size, fs);
             if (b.FlatStyle == FlatStyle.Flat)
                 b.FlatStyle = FlatStyle.Popup;
             else if (b.FlatStyle == FlatStyle.Popup)
@@ -227,7 +209,7 @@ namespace text
         }
 
         private void ChangeAlignment_Click(object sender, EventArgs e)
-        {
+        {//изменение выравнивания
             Button b = (Button)sender;
             if (b.Tag == (object)"left")
                 richTextBox1.SelectionAlignment = TextAlign.Left;
@@ -240,14 +222,14 @@ namespace text
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        {//закрытие файла
             path = "";
             richTextBox1.Clear();
             Text = NameTitle;
         }
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        {//сохранение как файла
             saveFileDialog1.FileName = path.Split('\\').Last();
             saveFileDialog1.Filter = "Rich Text Format (*.rtf;)|*.rtf;";
             if (saveFileDialog1.ShowDialog() != DialogResult.Cancel)
@@ -258,7 +240,7 @@ namespace text
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        {//открытие файла
             openFileDialog1.FileName = "";
             openFileDialog1.Filter = "Rich Text Format (*.rtf;)|*.rtf;";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -280,26 +262,26 @@ namespace text
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (path != "")
+        {//сохранение файла
+            if (path != "")//если есть путь
                 richTextBox1.SaveFile(path);
-            else
+            else//если нет - сохранение как
                 saveAsToolStripMenuItem.PerformClick();
         }
 
-        private void comboBox2_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            comboBox2_Leave(new object(), new EventArgs());
-        }
-
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        {//обновление текста
             richTextBox1.Update();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        {//выход
             Application.Exit();
+        }
+
+        private void comboBox2_SelectedValueChanged(object sender, EventArgs e)
+        {//выбор элемента из комбобокса с размерами
+            comboBox2_Leave(sender, e);
         }
     }
 

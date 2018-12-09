@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,10 +39,10 @@
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.JustifyAl = new System.Windows.Forms.Button();
+            this.RightAl = new System.Windows.Forms.Button();
+            this.CenterAl = new System.Windows.Forms.Button();
+            this.LeftAl = new System.Windows.Forms.Button();
             this.StrikeBtn = new System.Windows.Forms.Button();
             this.UnderBtn = new System.Windows.Forms.Button();
             this.ItalicBtn = new System.Windows.Forms.Button();
@@ -93,40 +92,40 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveAsToolStripMenuItem.Text = "Save As";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(111, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -149,10 +148,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.JustifyAl);
+            this.panel1.Controls.Add(this.RightAl);
+            this.panel1.Controls.Add(this.CenterAl);
+            this.panel1.Controls.Add(this.LeftAl);
             this.panel1.Controls.Add(this.StrikeBtn);
             this.panel1.Controls.Add(this.UnderBtn);
             this.panel1.Controls.Add(this.ItalicBtn);
@@ -171,65 +170,65 @@
             this.panel1.Size = new System.Drawing.Size(1200, 100);
             this.panel1.TabIndex = 2;
             // 
-            // button4
+            // JustifyAl
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Image = global::text.Properties.Resources.icons8_Align_Justify_20px;
-            this.button4.Location = new System.Drawing.Point(371, 30);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(23, 23);
-            this.button4.TabIndex = 14;
-            this.button4.Tag = "justify";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.ChangeAlignment_Click);
+            this.JustifyAl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.JustifyAl.FlatAppearance.BorderSize = 0;
+            this.JustifyAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.JustifyAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.JustifyAl.Image = global::text.Properties.Resources.icons8_Align_Justify_20px;
+            this.JustifyAl.Location = new System.Drawing.Point(371, 30);
+            this.JustifyAl.Name = "JustifyAl";
+            this.JustifyAl.Size = new System.Drawing.Size(23, 23);
+            this.JustifyAl.TabIndex = 14;
+            this.JustifyAl.Tag = "justify";
+            this.JustifyAl.UseVisualStyleBackColor = false;
+            this.JustifyAl.Click += new System.EventHandler(this.ChangeAlignment_Click);
             // 
-            // button3
+            // RightAl
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Image = global::text.Properties.Resources.icons8_Align_Right_20px;
-            this.button3.Location = new System.Drawing.Point(342, 30);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(23, 23);
-            this.button3.TabIndex = 13;
-            this.button3.Tag = "right";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.ChangeAlignment_Click);
+            this.RightAl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.RightAl.FlatAppearance.BorderSize = 0;
+            this.RightAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RightAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RightAl.Image = global::text.Properties.Resources.icons8_Align_Right_20px;
+            this.RightAl.Location = new System.Drawing.Point(342, 30);
+            this.RightAl.Name = "RightAl";
+            this.RightAl.Size = new System.Drawing.Size(23, 23);
+            this.RightAl.TabIndex = 13;
+            this.RightAl.Tag = "right";
+            this.RightAl.UseVisualStyleBackColor = false;
+            this.RightAl.Click += new System.EventHandler(this.ChangeAlignment_Click);
             // 
-            // button2
+            // CenterAl
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Image = global::text.Properties.Resources.icons8_Align_Center_20px;
-            this.button2.Location = new System.Drawing.Point(313, 30);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(23, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Tag = "center";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.ChangeAlignment_Click);
+            this.CenterAl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.CenterAl.FlatAppearance.BorderSize = 0;
+            this.CenterAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CenterAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CenterAl.Image = global::text.Properties.Resources.icons8_Align_Center_20px;
+            this.CenterAl.Location = new System.Drawing.Point(313, 30);
+            this.CenterAl.Name = "CenterAl";
+            this.CenterAl.Size = new System.Drawing.Size(23, 23);
+            this.CenterAl.TabIndex = 12;
+            this.CenterAl.Tag = "center";
+            this.CenterAl.UseVisualStyleBackColor = false;
+            this.CenterAl.Click += new System.EventHandler(this.ChangeAlignment_Click);
             // 
-            // button1
+            // LeftAl
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Image = global::text.Properties.Resources.icons8_Align_Left_20px;
-            this.button1.Location = new System.Drawing.Point(284, 30);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(23, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Tag = "left";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.ChangeAlignment_Click);
+            this.LeftAl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.LeftAl.FlatAppearance.BorderSize = 0;
+            this.LeftAl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LeftAl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LeftAl.Image = global::text.Properties.Resources.icons8_Align_Left_20px;
+            this.LeftAl.Location = new System.Drawing.Point(284, 30);
+            this.LeftAl.Name = "LeftAl";
+            this.LeftAl.Size = new System.Drawing.Size(23, 23);
+            this.LeftAl.TabIndex = 11;
+            this.LeftAl.Tag = "left";
+            this.LeftAl.UseVisualStyleBackColor = false;
+            this.LeftAl.Click += new System.EventHandler(this.ChangeAlignment_Click);
             // 
             // StrikeBtn
             // 
@@ -364,8 +363,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(68, 21);
             this.comboBox2.TabIndex = 2;
-            this.comboBox2.SelectionChangeCommitted += new System.EventHandler(this.comboBox2_SelectionChangeCommitted);
-            this.comboBox2.TextChanged += new System.EventHandler(this.comboBox2_TextChanged);
+            this.comboBox2.SelectedValueChanged += new System.EventHandler(this.comboBox2_SelectedValueChanged);
             this.comboBox2.Leave += new System.EventHandler(this.comboBox2_Leave);
             // 
             // ColorBtn
@@ -424,7 +422,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(630, 600);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
-            this.richTextBox1.SelectionChanged += new System.EventHandler(this.richTextBox_SelectionChanged);
             this.richTextBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.richTextBox1_MouseUp);
             // 
             // Form1
@@ -450,8 +447,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
@@ -476,10 +471,10 @@
         private System.Windows.Forms.Button ItalicBtn;
         private System.Windows.Forms.Button BoldBtn;
         private System.Windows.Forms.Button StrikeBtn;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button JustifyAl;
+        private System.Windows.Forms.Button RightAl;
+        private System.Windows.Forms.Button CenterAl;
+        private System.Windows.Forms.Button LeftAl;
         private ADV.AdvRichTextBox richTextBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
